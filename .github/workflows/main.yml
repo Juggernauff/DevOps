@@ -40,7 +40,7 @@ jobs:
     steps:
     - name: Deploy to server
       run: |
-        sshpass -p "${{secrets.SSH_PASSWORD}}" ssh -o StrictHostKeyChecking=no $HOST_USERNAME@$HOST_IP << EOF
+        sshpass -p "${{secrets.SSH_PASSWORD}}" ssh -o StrictHostKeyChecking=no ${{ secrets.HOST_USERNAME }}@${{ secrets.HOST_IP }} << EOF
         docker pull juggernauff/devops:latest
         docker stop devops || true
         docker rm devops || true
