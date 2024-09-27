@@ -44,5 +44,5 @@ jobs:
         docker pull juggernauff/devops:latest
         docker stop devops || true
         docker rm devops || true
-        docker run -d --name devops -p 80:80 juggernauff/devops:latest
+        docker run -d --name devops -p 80:8080 juggernauff/devops:latest
         EOF
